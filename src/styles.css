@@ -288,15 +288,32 @@
   #presupuesto{ scroll-margin-top:7.5rem; }
   @media(min-width:768px){
     #presupuesto{ scroll-margin-top:6.5rem; }
-  }
-  @media(min-width:768px){
-    .ppf-intro{ margin-bottom:3rem; }
-    .ppf-visual{ margin-bottom:3.5rem; }
+
+    .ppf-top{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+      gap:3.5rem;
+      align-items:center;
+      margin-bottom:3.5rem;
+    }
+    .ppf-intro{
+      margin-bottom:0;
+      max-width:34rem;
+    }
+    .ppf-visual{
+      max-width:24rem;
+      margin:0 0 0 auto;
+      width:100%;
+    }
+    .ppf-image-wrap{
+      max-width:none;
+      margin:0;
+    }
     .ppf-badge{
-      right:-2rem;
-      bottom:-2rem;
-      width:9rem;
-      height:9rem;
+      right:-1.5rem;
+      bottom:-1.5rem;
+      width:8.5rem;
+      height:8.5rem;
     }
     .ppf-body{
       grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);

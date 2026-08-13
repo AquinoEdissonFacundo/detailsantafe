@@ -69,8 +69,18 @@
   @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
 
   /* ---------- Hero ---------- */
-  .hero-img{ animation: heroZoom 26s ease-in-out infinite alternate; }
-  @keyframes heroZoom{ from{ transform:scale(1.04);} to{ transform:scale(1.15);} }
+  .hero-img{
+    object-fit: contain;
+    object-position: center center;
+    animation: heroZoom 26s ease-in-out infinite alternate;
+  }
+  @media(min-width:768px){
+    .hero-img{
+      object-fit: cover;
+      object-position: 50% 42%;
+    }
+  }
+  @keyframes heroZoom{ from{ transform:scale(1);} to{ transform:scale(1.02);} }
   .hero-grad{ background:linear-gradient(180deg, rgba(10,10,10,.5) 0%, rgba(10,10,10,.35) 28%, rgba(10,10,10,.94) 90%, #0A0A0A 100%); }
   .hero-grad-side{ background:linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 32%, rgba(10,10,10,.05) 62%, transparent 100%); }
   .hero-line{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }

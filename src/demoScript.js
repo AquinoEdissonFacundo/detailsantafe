@@ -84,9 +84,10 @@ document.querySelectorAll('.hero-line').forEach((el,i) => {
 // ---------- Light parallax on hero ----------
 const heroImg = document.querySelector('.hero-img');
 document.addEventListener('scroll', () => {
+  if (!heroImg) return;
   const y = window.scrollY;
-  if(y < window.innerHeight) heroImg.style.transform = `translateY(${y*0.15}px) scale(${1.04 + y*0.00006})`;
-}, {passive:true});
+  if (y < window.innerHeight) heroImg.style.transform = `translateY(${y * 0.08}px)`;
+}, { passive: true });
 
 // ---------- WhatsApp form helper ----------
 const WA_NUMBER = "5493424062146";

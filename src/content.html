@@ -48,26 +48,27 @@
 </div>
 
 <!-- ============ HERO ============ -->
-<header id="top" class="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-ink">
-  <div class="absolute inset-0">
-    <img src="/images/hero-bmw.jpg" alt="BMW en el showroom de Detail Santa Fe, centro de estética vehicular" class="hero-img w-full h-full">
-    <div class="absolute inset-0 hero-grad"></div>
-    <div class="absolute inset-0 hero-grad-side hidden md:block"></div>
+<header id="top" class="hero-shell">
+  <div class="hero-media">
+    <img src="/images/hero-bmw-wide.jpg" alt="BMW en el showroom de Detail Santa Fe, centro de estética vehicular" class="hero-img w-full h-full">
+    <div class="hero-grad"></div>
+    <div class="hero-grad-side"></div>
   </div>
 
-  <div class="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex flex-col justify-end pb-24 md:pb-28">
-    <div class="hero-line inline-flex items-center gap-2 self-start mb-6 px-3 py-1.5 rounded-full border-2 border-orange bg-ink/40 text-[11px] tracking-[0.25em] uppercase text-white font-semibold">
+  <div class="hero-inner">
+    <div class="hero-content">
+    <div class="hero-line hero-badge">
       <span class="w-1.5 h-1.5 rounded-full grad-bg"></span>
       Santa Fe · Argentina
     </div>
 
-    <h1 class="hero-line font-display text-white leading-[0.94] tracking-tight text-[13vw] md:text-[5.4vw] mb-6">
+    <h1 class="hero-line hero-title font-display text-white">
       DETAILING PREMIUM<br>EN <span class="grad-text">SANTA FE.</span>
     </h1>
 
-    <p class="hero-line text-white/70 text-base md:text-xl max-w-lg mb-9">Aplicadores Certificados FIREBALL. PPF, ceramizado y chapa y pintura integral para los autos que más te importan.</p>
+    <p class="hero-line hero-sub text-white/75">Aplicadores Certificados FIREBALL. PPF, ceramizado y chapa y pintura integral para los autos que más te importan.</p>
 
-    <div class="hero-line flex flex-wrap items-center gap-4">
+    <div class="hero-line hero-actions">
       <a href="https://wa.me/5493424062146?text=Hola%21%20Quiero%20mostrarte%20mi%20auto%20y%20consultar%20sobre%20los%20servicios%20de%20Detail%20Santa%20Fe%20%F0%9F%9A%98" target="_blank" rel="noopener" class="btn-grad inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-bold px-8 py-4">
         Consultar por WhatsApp
       </a>
@@ -75,14 +76,15 @@
         Ver servicios
       </a>
     </div>
+    </div>
   </div>
 </header>
 
 <!-- ============ MARQUEE ============ -->
 <div class="grad-bg overflow-hidden py-3 md:py-4">
   <div class="marquee-track flex whitespace-nowrap">
-    <span class="font-display text-white text-lg md:text-2xl tracking-wide px-4">CERTIFICADOS FIREBALL &nbsp;·&nbsp; PPF LÍNEA KERS &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp; CERTIFICADOS FIREBALL &nbsp;·&nbsp; PPF LÍNEA KERS &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp;</span>
-    <span class="font-display text-white text-lg md:text-2xl tracking-wide px-4" aria-hidden="true">CERTIFICADOS FIREBALL &nbsp;·&nbsp; PPF LÍNEA KERS &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp; CERTIFICADOS FIREBALL &nbsp;·&nbsp; PPF LÍNEA KERS &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp;</span>
+    <span class="font-display text-white text-lg md:text-2xl tracking-wide px-4">CERTIFICADOS FIREBALL &nbsp;·&nbsp; FILM PROTECTOR &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp; CERTIFICADOS FIREBALL &nbsp;·&nbsp; FILM PROTECTOR &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp;</span>
+    <span class="font-display text-white text-lg md:text-2xl tracking-wide px-4" aria-hidden="true">CERTIFICADOS FIREBALL &nbsp;·&nbsp; FILM PROTECTOR &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp; CERTIFICADOS FIREBALL &nbsp;·&nbsp; FILM PROTECTOR &nbsp;·&nbsp; CHAPA Y PINTURA INTEGRAL &nbsp;·&nbsp; SANTA FE, ARGENTINA &nbsp;·&nbsp;</span>
   </div>
 </div>
 
@@ -105,7 +107,7 @@
           <div class="svc-card-overlay absolute inset-0"></div>
           <div class="absolute left-5 right-5 bottom-5">
             <h3 class="font-display text-white text-2xl mb-2">PPF</h3>
-            <p class="text-white/65 text-sm leading-snug">Paint Protection Film línea Kers con material New Shield. Protección física, UV y autorreparable.</p>
+            <p class="text-white/65 text-sm leading-snug">Film protector invisible para cuidar la pintura de rayones, piedras y sol.</p>
           </div>
           <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-ink/60 border border-white/20 flex items-center justify-center backdrop-blur-sm">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 21L16.65 16.65M19 11A8 8 0 1 1 3 11A8 8 0 0 1 19 11Z" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M11 8V14M8 11H14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
@@ -145,57 +147,59 @@
 </section>
 
 <!-- ============ PPF SPOTLIGHT ============ -->
-<section id="ppf" class="relative py-24 md:py-32 px-6 md:px-10 bg-ink overflow-hidden">
+<section id="ppf" class="ppf-section relative py-24 md:py-32 px-6 md:px-10 bg-ink overflow-hidden">
   <div class="absolute inset-0 checker-tex opacity-40"></div>
-  <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal order-2 lg:order-1">
-      <p class="grad-text text-xs tracking-[0.3em] uppercase font-bold mb-4">PPF · Paint Protection Film</p>
-      <h2 class="font-display text-white text-4xl md:text-5xl tracking-tight leading-[0.95] mb-6">LÍNEA KERS,<br>MATERIAL NEW SHIELD.</h2>
-      <p class="text-white/60 text-lg leading-relaxed mb-4 max-w-md">Instalamos PPF línea Kers con material New Shield, con técnicas de alta precisión respaldadas por una capacitación exclusiva. Corte digital con software Pre Cut y plotter, para un calce perfecto en cada pieza.</p>
-      <p class="text-white/40 leading-relaxed max-w-md mb-8">Protección física contra rayones, piedras, insectos y excremento de aves. Protección UV y autorreparable ante micro rayones.</p>
-
-      <div class="grid grid-cols-2 gap-x-6 gap-y-2.5 max-w-md mb-9 text-sm text-white/70">
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Capot</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Paragolpe delantero</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Guardabarros izq. y der.</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Ópticas</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Marco de parabrisas</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Faros auxiliares</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Guiños</div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Patentes</div>
-      </div>
-
-      <form id="form-ppf" class="grid sm:grid-cols-2 gap-4 max-w-lg" novalidate>
-        <input required id="pf-nombre" type="text" placeholder="Tu nombre" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
-        <input id="pf-auto" type="text" placeholder="Marca y modelo del auto" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
-        <select id="pf-servicio" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
-          <option class="text-ink" value="PPF (Paint Protection Film)">PPF (Paint Protection Film)</option>
-          <option class="text-ink" value="Chapa y pintura integral">Chapa y pintura integral</option>
-          <option class="text-ink" value="Estética y ceramizado">Estética y ceramizado</option>
-          <option class="text-ink" value="No sé, quiero asesorarme">No sé, quiero asesorarme</option>
-        </select>
-        <input id="pf-zonas" type="text" placeholder="Piezas a cubrir (opcional)" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
-        <button type="button" id="pf-submit" class="btn-grad col-span-2 text-xs tracking-[0.2em] uppercase font-bold px-8 py-4 justify-self-start">
-          Cotizar por WhatsApp
-        </button>
-      </form>
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="reveal ppf-intro">
+      <p class="grad-text text-xs tracking-[0.3em] uppercase font-bold mb-4">Protección de pintura</p>
+      <h2 class="font-display text-white text-4xl md:text-5xl tracking-tight leading-[0.95] mb-5">PROTEGÉ LA PINTURA<br>DE TU AUTO.</h2>
+      <p class="text-white/60 text-lg leading-relaxed max-w-2xl">Instalamos un film protector invisible de alta calidad. Cuida la pintura de rayones, piedras, sol e insectos, y se autorrepara ante marcas leves.</p>
     </div>
 
-    <div class="reveal-pop order-1 lg:order-2 relative">
-      <div class="aspect-[4/5] w-full overflow-hidden rounded-sm">
-        <img src="/images/detail-8.jpg" alt="Instalación de PPF en Detail Santa Fe" class="w-full h-full object-cover">
+    <div class="reveal-pop ppf-visual">
+      <div class="ppf-image-wrap">
+        <img src="/images/detail-8.jpg" alt="Instalación de film protector en Detail Santa Fe" class="w-full h-full object-cover">
       </div>
-      <div class="badge-spin absolute -bottom-10 -right-10 md:-bottom-12 md:-right-12 w-28 h-28 md:w-36 md:h-36 text-white">
+      <div class="badge-spin ppf-badge text-white">
         <svg viewBox="0 0 200 200" class="w-full h-full">
           <defs><path id="circlePath" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" /></defs>
           <text font-size="13.5" letter-spacing="2" fill="currentColor" font-family="Inter, sans-serif" font-weight="700">
-            <textPath href="#circlePath">ALTA PRECISIÓN · NEW SHIELD ·</textPath>
+            <textPath href="#circlePath">ALTA PRECISIÓN · CORTE A MEDIDA ·</textPath>
           </text>
         </svg>
         <div class="absolute inset-0 flex items-center justify-center">
           <div class="w-10 h-10 md:w-12 md:h-12 rounded-full grad-bg"></div>
         </div>
       </div>
+    </div>
+
+    <div class="ppf-body">
+      <div class="reveal ppf-copy">
+        <p class="text-white/45 text-sm tracking-[0.2em] uppercase font-semibold mb-4">Piezas que podés cubrir</p>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-white/70">
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Capot</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Paragolpe delantero</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Guardabarros</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Ópticas y faros</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Parabrisas</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full grad-bg shrink-0"></span>Patentes</div>
+        </div>
+      </div>
+
+      <form id="form-ppf" class="reveal ppf-form grid sm:grid-cols-2 gap-4" novalidate>
+        <input required id="pf-nombre" type="text" placeholder="Tu nombre" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
+        <input id="pf-auto" type="text" placeholder="Marca y modelo del auto" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
+        <select id="pf-servicio" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
+          <option class="text-ink" value="Film protector (PPF)">Film protector (PPF)</option>
+          <option class="text-ink" value="Chapa y pintura integral">Chapa y pintura integral</option>
+          <option class="text-ink" value="Estética y ceramizado">Estética y ceramizado</option>
+          <option class="text-ink" value="No sé, quiero asesorarme">No sé, quiero asesorarme</option>
+        </select>
+        <input id="pf-zonas" type="text" placeholder="Qué querés cubrir (opcional)" class="field-dark rounded-sm px-4 py-3.5 text-sm col-span-2 sm:col-span-1">
+        <button type="button" id="pf-submit" class="btn-grad col-span-2 text-xs tracking-[0.2em] uppercase font-bold px-8 py-4 justify-self-start">
+          Cotizar por WhatsApp
+        </button>
+      </form>
     </div>
   </div>
 </section>
@@ -268,7 +272,7 @@
           <div>
             <div class="text-xs tracking-[0.25em] uppercase text-white/40 mb-2 font-semibold">Certificación</div>
             <div class="text-white/70">Aplicadores Certificados FIREBALL</div>
-            <div class="text-white/30 text-xs mt-1">PPF línea Kers · Material New Shield</div>
+            <div class="text-white/30 text-xs mt-1">Film protector de pintura · Instalación profesional</div>
           </div>
           <div class="divider-w"></div>
           <a href="https://wa.me/5493424062146?text=Hola%21%20Quiero%20consultar%20por%20un%20turno%20en%20Detail%20Santa%20Fe%20%F0%9F%9A%98" target="_blank" rel="noopener" class="btn-grad inline-flex w-fit items-center gap-2 text-xs tracking-[0.2em] uppercase font-bold px-8 py-4">

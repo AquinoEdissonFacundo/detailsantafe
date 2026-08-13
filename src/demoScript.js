@@ -84,9 +84,9 @@ document.querySelectorAll('.hero-line').forEach((el,i) => {
 // ---------- Light parallax on hero ----------
 const heroImg = document.querySelector('.hero-img');
 document.addEventListener('scroll', () => {
-  if (!heroImg) return;
+  if (!heroImg || window.innerWidth < 768) return;
   const y = window.scrollY;
-  if (y < window.innerHeight) heroImg.style.transform = `translateY(${y * 0.08}px)`;
+  if (y < window.innerHeight) heroImg.style.transform = `translateY(${y * 0.06}px)`;
 }, { passive: true });
 
 // ---------- WhatsApp form helper ----------
@@ -104,7 +104,7 @@ document.getElementById('pf-submit').addEventListener('click', () => {
   const auto = document.getElementById('pf-auto').value || 'A confirmar';
   const servicio = document.getElementById('pf-servicio').value;
   const zonas = document.getElementById('pf-zonas').value || '-';
-  const text = `Hola! Quiero cotizar un servicio en Detail Santa Fe 🚘\n\nNombre: ${nombre.value}\nAuto: ${auto}\nServicio: ${servicio}\nPiezas a cubrir: ${zonas}`;
+  const text = `Hola! Quiero cotizar un servicio en Detail Santa Fe 🚘\n\nNombre: ${nombre.value}\nAuto: ${auto}\nServicio: ${servicio}\nQué quiero cubrir: ${zonas}`;
   waOpen(text);
 });
 

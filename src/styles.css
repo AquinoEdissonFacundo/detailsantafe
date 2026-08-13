@@ -69,22 +69,136 @@
   @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
 
   /* ---------- Hero ---------- */
+  .hero-shell{
+    position:relative;
+    height:100svh;
+    min-height:580px;
+    width:100%;
+    overflow:hidden;
+    background:#0A0A0A;
+  }
+  .hero-media{
+    position:absolute;
+    inset:0;
+    background:#0A0A0A;
+  }
+  .hero-media .hero-grad,
+  .hero-media .hero-grad-side{
+    position:absolute;
+    inset:0;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:10;
+    height:100%;
+    max-width:80rem;
+    margin:0 auto;
+    padding:7rem 1.5rem 1.5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+  }
   .hero-img{
-    object-fit: contain;
-    object-position: center center;
-    animation: heroZoom 26s ease-in-out infinite alternate;
+    object-fit:cover;
+    object-position:center 52%;
+    animation:heroZoom 30s ease-in-out infinite alternate;
+  }
+  @keyframes heroZoom{ from{ transform:scale(1);} to{ transform:scale(1.03);} }
+  .hero-grad{
+    background:linear-gradient(180deg, rgba(10,10,10,.62) 0%, rgba(10,10,10,.08) 38%, rgba(10,10,10,.18) 68%, rgba(10,10,10,.55) 100%);
+  }
+  .hero-grad-side{
+    background:linear-gradient(90deg, rgba(10,10,10,.94) 0%, rgba(10,10,10,.72) 36%, rgba(10,10,10,.18) 62%, transparent 82%);
+  }
+  .hero-content{ max-width:34rem; }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    margin-bottom:1.25rem;
+    padding:.375rem .75rem;
+    border-radius:9999px;
+    border:2px solid var(--orange);
+    background:rgba(10,10,10,.4);
+    font-size:11px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero-title{
+    line-height:.94;
+    letter-spacing:-.025em;
+    font-size:clamp(2.2rem, 11vw, 4.5rem);
+    margin-bottom:1.25rem;
+  }
+  .hero-sub{
+    font-size:clamp(.95rem, 2.6vw, 1.25rem);
+    line-height:1.55;
+    max-width:28rem;
+    margin-bottom:1.75rem;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:.75rem;
   }
   @media(min-width:768px){
-    .hero-img{
-      object-fit: cover;
-      object-position: 50% 55%;
+    .hero-shell{ min-height:640px; }
+    .hero-inner{
+      padding:0 2.5rem 5rem;
+      justify-content:flex-end;
     }
+    .hero-img{ object-position:center 50%; }
+    .hero-content{ max-width:38rem; }
+    .hero-badge{ margin-bottom:1.5rem; }
+    .hero-title{ font-size:clamp(2.8rem, 5.4vw, 4.5rem); margin-bottom:1.5rem; }
+    .hero-sub{ margin-bottom:2.25rem; }
+    .hero-actions{ gap:1rem; }
   }
-  @keyframes heroZoom{ from{ transform:scale(1);} to{ transform:scale(1.02);} }
-  .hero-grad{ background:linear-gradient(180deg, rgba(10,10,10,.5) 0%, rgba(10,10,10,.35) 28%, rgba(10,10,10,.94) 90%, #0A0A0A 100%); }
-  .hero-grad-side{ background:linear-gradient(90deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.55) 32%, rgba(10,10,10,.05) 62%, transparent 100%); }
   .hero-line{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
   .hero-line.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- PPF section ---------- */
+  .ppf-intro{ margin-bottom:2.5rem; }
+  .ppf-visual{
+    position:relative;
+    max-width:42rem;
+    margin:0 auto 3rem;
+  }
+  .ppf-image-wrap{
+    aspect-ratio:4/3;
+    width:100%;
+    overflow:hidden;
+    border-radius:.125rem;
+  }
+  .ppf-badge{
+    position:absolute;
+    right:-1.25rem;
+    bottom:-1.25rem;
+    width:7rem;
+    height:7rem;
+  }
+  .ppf-body{
+    display:grid;
+    gap:2.5rem;
+    align-items:start;
+  }
+  @media(min-width:768px){
+    .ppf-intro{ margin-bottom:3rem; }
+    .ppf-visual{ margin-bottom:3.5rem; }
+    .ppf-badge{
+      right:-2rem;
+      bottom:-2rem;
+      width:9rem;
+      height:9rem;
+    }
+    .ppf-body{
+      grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+      gap:3.5rem;
+    }
+  }
 
   /* ---------- Spin badge ---------- */
   .badge-spin{ animation: spin 20s linear infinite; }

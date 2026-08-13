@@ -1,13 +1,26 @@
 // ---------- Loader ----------
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hide');
-    document.body.style.overflow = '';
-    revealCheck();
-  }, 1100);
-});
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (!loader || loader.classList.contains('hide')) return;
+  loader.classList.add('hide');
+  document.body.style.overflow = '';
+  revealCheck();
+}
+
+function scheduleHideLoader(delay = 1100) {
+  setTimeout(hideLoader, delay);
+}
+
 document.body.style.overflow = 'hidden';
-setTimeout(()=>{ document.body.style.overflow = ''; }, 2000);
+
+if (document.readyState === 'complete') {
+  scheduleHideLoader(1100);
+} else {
+  window.addEventListener('load', () => scheduleHideLoader(1100), { once: true });
+}
+
+// Fallback por si load no dispara (recursos bloqueados en mobile, caché, etc.)
+setTimeout(hideLoader, 3500);
 
 // ---------- Nav scroll state ----------
 const nav = document.getElementById('nav');

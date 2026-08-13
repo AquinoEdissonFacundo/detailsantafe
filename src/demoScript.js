@@ -152,6 +152,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   }
 
   handle.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
     dragging = true;
     handle.setPointerCapture(e.pointerId);
     positionFromClientX(e.clientX);
@@ -159,6 +160,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
   handle.addEventListener('pointermove', (e) => {
     if (!dragging) return;
+    e.preventDefault();
     positionFromClientX(e.clientX);
   });
 
@@ -171,8 +173,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if (e.key === 'ArrowRight') { e.preventDefault(); setPosition(current + 0.05); }
   });
 
-  slider.addEventListener('click', (e) => {
-    if (e.target === handle || handle.contains(e.target)) return;
-    positionFromClientX(e.clientX);
-  });
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    slider.addEventListener('click', (e) => {
+      if (e.target === handle || handle.contains(e.target)) return;
+      positionFromClientX(e.clientX);
+    });
+  }
 })();

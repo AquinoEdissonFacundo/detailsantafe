@@ -127,7 +127,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     const id=a.getAttribute('href');
     if(id.length>1){
       const target=document.querySelector(id);
-      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      if(target){
+        e.preventDefault();
+        const offset = window.innerWidth < 768 ? 120 : 96;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ behavior: 'smooth', top });
+      }
     }
   });
 });

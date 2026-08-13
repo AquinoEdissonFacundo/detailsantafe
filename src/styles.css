@@ -199,21 +199,30 @@
     max-width:34rem;
     display:flex;
     flex-direction:column;
+    align-items:flex-start;
     gap:1.75rem;
   }
   .hero-badge{
     display:inline-flex;
     align-items:center;
-    gap:.5rem;
+    width:fit-content;
+    gap:.35rem;
     margin-bottom:0;
-    padding:.5rem .875rem;
+    padding:.3rem .65rem;
     border-radius:9999px;
-    border:2px solid var(--orange);
-    background:rgba(10,10,10,.4);
-    font-size:11px;
-    letter-spacing:.25em;
+    border:1.5px solid var(--orange);
+    background:rgba(10,10,10,.45);
+    font-size:9px;
+    letter-spacing:.18em;
     text-transform:uppercase;
     font-weight:600;
+    line-height:1;
+  }
+  .hero-badge-dot{
+    width:.35rem;
+    height:.35rem;
+    border-radius:9999px;
+    flex-shrink:0;
   }
   .hero-title{
     line-height:.96;
@@ -276,7 +285,10 @@
     gap:2.5rem;
     align-items:start;
   }
-  #presupuesto{ scroll-margin-top:6rem; }
+  #presupuesto{ scroll-margin-top:7.5rem; }
+  @media(min-width:768px){
+    #presupuesto{ scroll-margin-top:6.5rem; }
+  }
   @media(min-width:768px){
     .ppf-intro{ margin-bottom:3rem; }
     .ppf-visual{ margin-bottom:3.5rem; }

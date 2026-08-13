@@ -272,6 +272,7 @@
     gap:2.5rem;
     align-items:start;
   }
+  #presupuesto{ scroll-margin-top:6rem; }
   @media(min-width:768px){
     .ppf-intro{ margin-bottom:3rem; }
     .ppf-visual{ margin-bottom:3.5rem; }

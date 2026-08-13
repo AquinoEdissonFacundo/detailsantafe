@@ -168,11 +168,14 @@
     margin:0 auto 3rem;
   }
   .ppf-image-wrap{
-    aspect-ratio:4/3;
+    aspect-ratio:4/5;
     width:100%;
+    max-width:22rem;
+    margin:0 auto;
     overflow:hidden;
     border-radius:.125rem;
   }
+  .ppf-image-wrap img{ object-position:center 45%; }
   .ppf-badge{
     position:absolute;
     right:-1.25rem;
@@ -398,10 +401,46 @@
     text-transform:uppercase;
   }
 
-  /* ---------- WhatsApp float ---------- */
-  #wa-float{ position:fixed; bottom:22px; right:22px; z-index:70; width:60px; height:60px; border-radius:9999px; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 28px -6px rgba(37,211,102,.6); transition:transform .3s cubic-bezier(.16,1,.3,1); opacity:0; transform:translateY(18px) scale(.9); }
-  #wa-float.show{ opacity:1; transform:translateY(0) scale(1); }
-  #wa-float:active{ transform:scale(.9); }
+  /* ---------- WhatsApp buttons ---------- */
+  .wa-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:9999px;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    color:#fff;
+    box-shadow:0 10px 28px -6px rgba(249,128,3,.55);
+    transition:transform .3s cubic-bezier(.16,1,.3,1), filter .3s ease;
+  }
+  .wa-btn:hover{ filter:brightness(1.08); transform:translateY(-1px); }
+  .wa-btn-sm{ width:2.5rem; height:2.5rem; flex-shrink:0; }
+  #wa-float.wa-btn-float{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    z-index:70;
+    width:60px;
+    height:60px;
+    opacity:0;
+    transform:translateY(18px) scale(.9);
+  }
+  #wa-float.wa-btn-float.show{ opacity:1; transform:translateY(0) scale(1); }
+  #wa-float.wa-btn-float:active{ transform:scale(.9); }
+
+  /* ---------- Footer ---------- */
+  .footer-grid{
+    display:grid;
+    gap:2.5rem;
+    grid-template-columns:1fr;
+  }
+  .footer-form-wrap{ max-width:22rem; }
+  @media(min-width:768px){
+    .footer-grid{
+      grid-template-columns:1.1fr .9fr .9fr 1.2fr;
+      gap:2rem;
+      align-items:start;
+    }
+  }
 
   /* ---------- Mobile menu ---------- */
   #mmenu{ transition:clip-path .6s cubic-bezier(.76,0,.24,1); clip-path:circle(0px at calc(100% - 34px) 34px); }

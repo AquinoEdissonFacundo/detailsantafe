@@ -98,15 +98,28 @@ function shakeField(el){
   el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); el.focus();
 }
 
-document.getElementById('pf-submit').addEventListener('click', () => {
-  const nombre = document.getElementById('pf-nombre');
-  if(!nombre.value.trim()){ shakeField(nombre); return; }
-  const auto = document.getElementById('pf-auto').value || 'A confirmar';
-  const servicio = document.getElementById('pf-servicio').value;
-  const zonas = document.getElementById('pf-zonas').value || '-';
-  const text = `Hola! Quiero cotizar un servicio en Detail Santa Fe 🚘\n\nNombre: ${nombre.value}\nAuto: ${auto}\nServicio: ${servicio}\nQué quiero cubrir: ${zonas}`;
-  waOpen(text);
-});
+function bindQuoteForm(form) {
+  const submitBtn = form.querySelector('[data-quote-submit]');
+  if (!submitBtn) return;
+
+  submitBtn.addEventListener('click', () => {
+    const nombre = form.querySelector('[data-field="nombre"]');
+    if (!nombre || !nombre.value.trim()) {
+      if (nombre) shakeField(nombre);
+      return;
+    }
+    const autoEl = form.querySelector('[data-field="auto"]');
+    const servicioEl = form.querySelector('[data-field="servicio"]');
+    const zonasEl = form.querySelector('[data-field="zonas"]');
+    const auto = autoEl?.value || 'A confirmar';
+    const servicio = servicioEl?.value || 'A confirmar';
+    const zonas = zonasEl?.value || '-';
+    const text = `Hola! Quiero cotizar un servicio en Detail Santa Fe 🚘\n\nNombre: ${nombre.value}\nAuto: ${auto}\nServicio: ${servicio}\nQué quiero cubrir: ${zonas}`;
+    waOpen(text);
+  });
+}
+
+document.querySelectorAll('.quote-form').forEach(bindQuoteForm);
 
 // smooth-scroll for in-page anchors
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
